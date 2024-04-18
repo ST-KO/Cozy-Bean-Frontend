@@ -30,7 +30,7 @@ const Login = () => {
         e.preventDefault();
 
         try{
-            const url = `${backendUrl}/api/auth`;
+            const url = `${backendUrl}api/auth`;
             const {data: res} = await axios.post(url, data);
             localStorage.setItem('token', res.data);
             enqueueSnackbar('Login Successfully', {variant: "success"});

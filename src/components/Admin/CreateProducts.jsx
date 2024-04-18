@@ -47,7 +47,7 @@ const CreateProducts = () => {
         //     formData
         // }
         const backendUrl = process.env.REACT_APP_BASE_URL || 'http://localhost:5555';
-        axios.post(`${backendUrl}/api/products`, formData)
+        axios.post(`${backendUrl}api/products`, formData)
             .then(res => {
                 enqueueSnackbar('Menu Added Successfully', {variant: 'success'});
                 

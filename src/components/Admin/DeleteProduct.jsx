@@ -13,7 +13,7 @@ const DeleteProduct = () => {
 
     const backendUrl = process.env.REACT_APP_BASE_URL || 'http://localhost:5555';
     useEffect(() => {
-        axios.get(`${backendUrl}/api/products/${params.id}`)
+        axios.get(`${backendUrl}api/products/${params.id}`)
             .then(res => {
                 // console.log(res.data);
                 setData(res.data);
@@ -25,7 +25,7 @@ const DeleteProduct = () => {
 
     const handleUpload = (e) => {
        
-        axios.delete(`${backendUrl}/api/products/${params.id}`)
+        axios.delete(`${backendUrl}api/products/${params.id}`)
             .then(res => {
                 navigate('/');
             })
@@ -42,7 +42,7 @@ return (
             {
                 data &&
                 <article className='postview-menu-item' id={data._id}>
-                    <img src={`${backendUrl}/images/${data?.img}`} alt="menu item" className='postview-photo' />
+                    <img src={`${backendUrl}images/${data?.img}`} alt="menu item" className='postview-photo' />
                     <div className='item-info'>
                         <header>
                             <h4>{data.myanmarName}</h4>

@@ -43,7 +43,7 @@ const EditProduct = () => {
 
     const backendUrl = process.env.REACT_APP_BASE_URL || 'http://localhost:5555';
     useEffect(() => {
-        axios.get(`${backendUrl}/api/products/${id}`)
+        axios.get(`${backendUrl}api/products/${id}`)
         .then(res => {
             settingData(res.data);
 
@@ -68,7 +68,7 @@ const EditProduct = () => {
         formData.append('price', menuData.price);
         formData.append('file', menuData.file);
         
-        axios.put(`${backendUrl}/api/products/${id}`, formData)
+        axios.put(`${backendUrl}api/products/${id}`, formData)
             .then(res => {
                 enqueueSnackbar("Menu Edited Successfully", {variant: "success"});
                 navigate(`/createitem/${res.data._id}`);
@@ -205,7 +205,7 @@ const EditProduct = () => {
             {
                 menuData.filePreview ? 
                 <img src={menuData.filePreview} alt="menu item" className='createproduct-photo' /> :
-                <img src={`${backendUrl}/images/${menuData?.file}`} alt="menu item" className='createproduct-photo' /> 
+                <img src={`${backendUrl}images/${menuData?.file}`} alt="menu item" className='createproduct-photo' /> 
                 
             }
             <input 
