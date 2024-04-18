@@ -32,7 +32,7 @@ const DisplayMenu = ({data}) => {
 
     const displayMenu = finalFilterArray.map(menu => (
         <article className='menu-item' key={menu._id}>
-            <img src={`${backendUrl}/images/${menu?.img}`} alt="menu item" className='photo' />
+            <img src={`${backendUrl}images/${menu?.img}`} alt="menu item" className='photo' />
             <div className='item-info'>
                 <header>
                     <h4>{menu.myanmarName}</h4>
